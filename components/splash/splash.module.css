@@ -1,0 +1,18 @@
+.logoContainer {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin: 20rem 3rem 12rem;
+}
+
+.logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.6875rem;
+    font-weight: 400;
+    margin-top: 3rem;
+}
+
+.description {
+    font-family: 'Satoshi-Regular';
+    font-size: 1rem;
+} 
