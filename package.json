@@ -1,7 +1,11 @@
 {
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@zeit/next-css": "^1.0.1",
     "eslint-config-next": "^12.3.4",
     "next": "^12.3.4",
+    "next-compose-plugins": "^2.2.1",
+    "next-transpile-modules": "^10.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },

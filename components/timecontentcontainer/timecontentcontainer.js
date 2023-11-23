@@ -10,7 +10,7 @@ function TimeContentContainer(props) {
     useEffect(() => {
         const intervalID = setInterval(() => {
             setTimeItems(props.calculateTimeItems(new Date()));
-        }, 1000);
+        }, 1001);
     
         return () => clearInterval(intervalID);
       }, []);

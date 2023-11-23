@@ -1,3 +1,13 @@
+"use client";
+import Image from 'next/image'
+import Splash from '../components/splash/splash'
+import TimeContainer from '../components/timecontainer/timecontainer';
+
 export default function Index() {
-    return <h1>Hello, Next.js!</h1>
-  }
+  return (
+      <div>
+        <Splash/>
+        <TimeContainer/>
+      </div>
+  )
+}
