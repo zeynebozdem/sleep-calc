@@ -1,19 +1,19 @@
 import styles from './navigationcontainer.module.css';
-import React, {useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { TextField } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     container: {
-      display: 'flex',
-      flexWrap: 'wrap',
+        display: 'flex',
+        flexWrap: 'wrap',
     },
     textField: {
-      marginLeft: theme.spacing(1),
-      marginRight: theme.spacing(1),
-      width: 200,
+        marginLeft: theme.spacing(1),
+        marginRight: theme.spacing(1),
+        width: 200,
     },
-  }));
+}));
 
 function NavigationContainer(props) {
     const classes = useStyles();
@@ -34,15 +34,15 @@ function NavigationContainer(props) {
 
     useEffect(() => {
         const intervalID = setInterval(() => {
-          setformattedTime(new Date().toLocaleTimeString("en-US", {
-            hour: "numeric",
-            minute: "numeric",
-            hour12: true
-        }));
+            setformattedTime(new Date().toLocaleTimeString("en-US", {
+                hour: "numeric",
+                minute: "numeric",
+                hour12: true
+            }));
         }, 1000);
-    
+
         return () => clearInterval(intervalID);
-      }, []);
+    }, []);
 
     return (
         <div>
@@ -56,20 +56,23 @@ function NavigationContainer(props) {
                     </div>
                 }
                 <form className={classes.container} noValidate>
-      <TextField
-        id="time"
-        label="Alarm clock"
-        type="time"
-        defaultValue="07:30"
-        className={classes.textField}
-        InputLabelProps={{
-          shrink: true,
-        }}
-        inputProps={{
-          step: 300, // 5 min
-        }}
-      />
-    </form>
+                    <TextField
+                        id="time"
+                        type="time"
+                        defaultValue={new Date().toLocaleTimeString("en-US", {
+                            hour: "numeric",
+                            minute: "numeric",
+                            hour12: false
+                        })}
+                        className={classes.textField}
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                        inputProps={{
+                            step: 60, // 5 min
+                        }}
+                    />
+                </form>
             </div>
         </div>
     );

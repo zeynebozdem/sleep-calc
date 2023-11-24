@@ -11,7 +11,7 @@ body{
     justify-content: center;
     margin: 0;
     & > div{
-        border: 3px solid red;
+        border: 3px solid rgba(255, 255, 255, 0.2);
         max-width: 480px;
         height: 99vh;
         width: 100%;

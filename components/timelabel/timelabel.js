@@ -5,11 +5,11 @@ function TimeLabel(props) {
     const now = props.date;
     const time = now.getHours();
     const timeicon = (time >= 6 && time < 18) ? 'sun' : 'moon';
-    const formattedTime = now.toLocaleTimeString("en-US", {
+    const formattedTime = now.toLocaleTimeString({
         hour: "numeric",
         minute: "numeric",
-        hour12: false
-      });
+        timeZone: 'UTC'
+    });
 
     const amPmValue = now.getHours() >= 12 ? "PM" : "AM";
 
@@ -17,13 +17,15 @@ function TimeLabel(props) {
     return (
         <div className={styles.timeLabel}>
             <div className={styles.timeicon}>
-                <Image src={`${'/'+timeicon+'.svg'}`} width={22} height={22}/>
+                <Image src={`${'/' + timeicon + '.svg'}`} width={22} height={22} />
             </div>
-            <div className={styles.formattedTime}>
-                <span>{formattedTime}</span>
-            </div>
-            <div className={styles.amPmValue}>
-                <span>{amPmValue}</span>
+            <div>
+                <div className={styles.formattedTime}>
+                    <span>{formattedTime}</span>
+                </div>
+                <div className={styles.amPmValue}>
+                    <span>{amPmValue}</span>
+                </div>
             </div>
         </div>
     );
