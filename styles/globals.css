@@ -17,6 +17,9 @@ body{
         width: 100%;
     }
 }
+.mainContainer{
+    height: 100%;
+}
 
 .display-none{
     display: none!important;

@@ -5,7 +5,7 @@ import TimeContainer from '../components/timecontainer/timecontainer';
 
 export default function Index() {
   return (
-      <div>
+      <div className='mainContainer'>
         <Splash/>
         <TimeContainer/>
       </div>

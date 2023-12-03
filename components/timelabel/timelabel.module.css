@@ -20,3 +20,7 @@
     font-weight: 400;
     opacity: 0.8;
 }
+.timeWrapper{
+    display: flex;
+    align-items: baseline;
+}
