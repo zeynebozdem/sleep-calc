@@ -1,6 +1,6 @@
 .timecontainer{
     display: flex;
-    justify-content: space-between;
+    justify-content:end;
     height: 100%;
     flex-direction: column;
 }
