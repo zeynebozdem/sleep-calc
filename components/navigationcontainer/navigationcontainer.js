@@ -78,7 +78,7 @@ function NavigationContainer(props) {
                         <DemoContainer components={['MobileTimePicker']}>
                             <MobileTimePicker
                                 ampm={false}
-                                closeOnSelect={true}
+                                closeOnSelect={false}
                                 value={value}
                                 open={open}
                                 onChange={TimePickerChange}
