@@ -1,0 +1,26 @@
+.timeLabel{
+    display: flex;
+    color: #FFF;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+.timeicon{
+    margin-right: 0.5rem;
+}
+.formattedTime{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.75rem;
+    font-weight: 400;
+    opacity: 0.8;
+    margin-right: 0.5rem;
+}
+.amPmValue{
+    font-family: 'Satoshi-Regular';
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+.timeWrapper{
+    display: flex;
+    align-items: baseline;
+}

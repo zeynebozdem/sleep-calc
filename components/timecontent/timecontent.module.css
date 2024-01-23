@@ -1,0 +1,18 @@
+.timecontent{
+    color: #FFF;
+    font-family: 'Satoshi-Regular';
+    flex-direction: column;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    opacity: .8;
+    display: flex;
+    justify-content: center;
+}
+.title {
+    font-size: 1.5rem;
+}
+
+.description {
+    font-size: 1rem;
+}

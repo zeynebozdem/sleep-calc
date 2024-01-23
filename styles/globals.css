@@ -1,0 +1,37 @@
+@import url(../public/fonts/satoshi.css);
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+/*font-family: 'JetBrains Mono', monospace;
+font-family: 'Satoshi Regular';*/
+
+body{
+    background: linear-gradient(180deg, #101529 31.21%, #000 68.19%);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    & > div{
+        border: 3px solid rgba(255, 255, 255, 0.2);
+        max-width: 480px;
+        height: 99vh;
+        width: 100%;
+    }
+}
+.mainContainer{
+    height: 90vh;
+}
+
+.display-none{
+    display: none!important;
+}
+
+.visibility-hidden{
+    visibility: hidden!important;
+}
+.show{
+    
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+   
+}

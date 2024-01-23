@@ -1,0 +1,29 @@
+.time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    opacity: 0.5;
+}
+
+.button {
+    padding: 0 1.5rem;
+    color: #FFF;
+    border-radius: 1rem;
+    margin: 2rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.875rem;
+    background: rgba(37, 37, 37, 0.60);
+    justify-content: center;
+}
+
+.createNewTime {
+    background: #11162A;
+    justify-content: space-between;
+    font-family: 'Satoshi-Regular';
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 500;
+}
