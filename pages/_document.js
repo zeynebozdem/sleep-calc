@@ -14,7 +14,7 @@ class MyDocument extends Document {
           <meta charSet="utf-8" />
 
           {/* Favicon eklemek için örnek */}
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/appicon.svg" />
 
           {/* Özel CSS bağlantısı */}
           <link rel="stylesheet" href="/styles/custom.css" />
