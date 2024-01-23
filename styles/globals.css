@@ -6,13 +6,14 @@ font-family: 'Satoshi Regular';*/
 
 body{
     background: linear-gradient(180deg, #101529 31.21%, #000 68.19%);
-    
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
     .mainContainer{
         max-width: 480px;
+        height: calc(100% - 30px);
         width: 100%;
     }
 }
