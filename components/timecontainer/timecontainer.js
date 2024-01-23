@@ -9,8 +9,10 @@ function TimeContainer() {
     const [sleepCycles, setSleepCycles] = useState(6);
     const [selectedTime, setSelectedTime] = useState();
     const [fallASleepTime, setfallASleepTime] = useState(15);   //  IDEA: should be customizable 
+    const [createNewTime, setCreateNewTime] = useState();
 
-    const calculateTimeItems = (time, subtract = false) => {
+
+    const calculateTimeItems = (time, subtract = false, createNewTime) => {
         const cycleTime = 90;
         const timeItems = [];
     
@@ -22,6 +24,7 @@ function TimeContainer() {
             }
         }
         setTimeItems(timeItems);
+        setCreateNewTime(createNewTime);
         return timeItems;
     }
 
@@ -40,7 +43,7 @@ function TimeContainer() {
 
     return (
         <div className={styles.timecontainer + ' ' + visibilityStatus}>
-            <TimeContentContainer timeItems={timeItems} />
+            <TimeContentContainer timeItems={timeItems} createNewTime={createNewTime} />
             <NavigationContainer calculateTimeItems={calculateTimeItems}/>
         </div>
     );

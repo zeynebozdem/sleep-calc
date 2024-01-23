@@ -14,7 +14,6 @@ function NavigationContainer(props) {
     const [mode, setMode] = useState('interval');
     const [visibilityStatus, setVisibilityStatus] = useState('display-none');
 
-    const createNewTime = true;
     const [formattedTime, setformattedTime] = useState(new Date().toLocaleTimeString("en-US", {
         hour: "numeric",
         minute: "numeric",
@@ -46,27 +45,31 @@ function NavigationContainer(props) {
         setOpen(false);
     }
 
+    const TimePickerAcceptClose = (value) => {
+        console.info(value)
+    
+    }
     const TimePickerChange = (newValue) => {
         setValue(newValue);
         setformattedTime(newValue.format('HH:mm'));
-        setTimeItems(props.calculateTimeItems(newValue.toDate()));
+        setTimeItems(props.calculateTimeItems(newValue.toDate(),false,newValue.format('HH:mm')));
         HandleTimePickerClose();
     }    
 
     const changeTime = () => {
         setMode('timePicker');
-        setOpen(true);
+        setOpen(!open);
     }
 
 
     return (
         <div>
-            <div className={`createNewTime ? ${styles.button + ' ' + styles.createNewTime}`} onClick={changeTime}>
+            <div className={`${styles.button}`} onClick={changeTime}>
                 <div>
                     {message}
                 </div>
                 {
-                    createNewTime && <div className={styles.time}>
+                    <div className={styles.time}>
                         <span>{formattedTime}</span>
                     </div>
                 }
@@ -79,9 +82,8 @@ function NavigationContainer(props) {
                                 value={value}
                                 open={open}
                                 onChange={TimePickerChange}
-                                onClose={HandleTimePickerClose}
-                                onAccept={TimePickerChange}
-                                mobilePaper/>
+                                onClose={TimePickerAcceptClose}
+                                onAccept={TimePickerAcceptClose(value)}/>
                         </DemoContainer>
                     </LocalizationProvider>
                 </div>

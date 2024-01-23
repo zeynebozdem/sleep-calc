@@ -7,7 +7,7 @@ import styles from './timecontentcontainer.module.css'
 function TimeContentContainer(props) {
     return (
         <div className={styles.timecontentcontainer}>
-            <TimeContent/>
+            <TimeContent createNewTime={props.createNewTime}/>
             {
                 props.timeItems && props.timeItems.map((item) => {
                     return <TimeLabel date={new Date(item)} />

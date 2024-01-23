@@ -17,9 +17,6 @@
     border-radius: 0.875rem;
     background: rgba(37, 37, 37, 0.60);
     justify-content: center;
-}
-
-.createNewTime {
     background: #11162A;
     justify-content: space-between;
     font-family: 'Satoshi-Regular';
@@ -27,3 +24,4 @@
     font-style: normal;
     font-weight: 500;
 }
+

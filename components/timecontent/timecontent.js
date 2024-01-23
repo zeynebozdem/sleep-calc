@@ -4,7 +4,7 @@ function TimeContent(props) {
     let message;
 
     if (props.createNewTime) {
-        message = <span>Eğer uyanma saatin {props.time} olursa</span>;
+        message = <span>Eğer uyanma saatin {props.createNewTime} olursa</span>;
     } else {
         message = <span>Eğer şimdi uyursan:</span>;
     }
