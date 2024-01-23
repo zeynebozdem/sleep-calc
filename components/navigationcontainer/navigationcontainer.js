@@ -74,6 +74,8 @@ function NavigationContainer(props) {
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
                         <DemoContainer components={['MobileTimePicker']}>
                             <MobileTimePicker
+                                ampm={false}
+                                closeOnSelect={true}
                                 value={value}
                                 open={open}
                                 onChange={TimePickerChange}

@@ -27,7 +27,7 @@ function TimeLabel(props) {
                     <span>{formattedTime}</span>
                 </div>
                 <div className={styles.amPmValue}>
-                    <span>{amPmValue}</span>
+                    
                 </div>
             </div>
         </div>
