@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { TimePicker } from '@mui/x-date-pickers/TimePicker';
+import { MobileTimePicker } from '@mui/x-date-pickers';
 
 function NavigationContainer(props) {
     let message;
@@ -12,12 +12,8 @@ function NavigationContainer(props) {
     const [open, setOpen] = useState(false);
     const [timeItems, setTimeItems] = useState();
     const [mode, setMode] = useState('interval');
-
-    console.info(open);
     const [visibilityStatus, setVisibilityStatus] = useState('display-none');
 
-
-    //const createNewTime = props.createNewTime;
     const createNewTime = true;
     const [formattedTime, setformattedTime] = useState(new Date().toLocaleTimeString("en-US", {
         hour: "numeric",
@@ -26,23 +22,6 @@ function NavigationContainer(props) {
     }));
 
     message = <span>Uyanma saati seç</span>
-    const HandleTimePickerClose = () => {
-        setOpen(false);
-    }
-
-    const TimePickerChange = (newValue) => {
-        setValue(newValue);
-        setformattedTime(newValue.format('HH:mm'));
-        setTimeItems(props.calculateTimeItems(newValue.toDate()));
-        HandleTimePickerClose();
-    }
-
-
-
-    const changeTime = () => {
-        setOpen(true);
-        setMode('timePicker');
-    }
 
     useEffect(() => {
         if (mode == 'interval') {
@@ -60,7 +39,24 @@ function NavigationContainer(props) {
 
             return () => clearInterval(intervalID);
         }
-    }, [mode]);
+        console.info(open);
+    }, [mode,open]);
+
+    const HandleTimePickerClose = () => {
+        setOpen(false);
+    }
+
+    const TimePickerChange = (newValue) => {
+        setValue(newValue);
+        setformattedTime(newValue.format('HH:mm'));
+        setTimeItems(props.calculateTimeItems(newValue.toDate()));
+        HandleTimePickerClose();
+    }    
+
+    const changeTime = () => {
+        setMode('timePicker');
+        setOpen(true);
+    }
 
 
     return (
@@ -76,13 +72,14 @@ function NavigationContainer(props) {
                 }
                 <div className={visibilityStatus}>
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
-                        <DemoContainer components={['TimePicker']}>
-                            <TimePicker label="Controlled picker"
+                        <DemoContainer components={['MobileTimePicker']}>
+                            <MobileTimePicker
                                 value={value}
                                 open={open}
                                 onChange={TimePickerChange}
-                                onAccept={HandleTimePickerClose}
-                                onClose={HandleTimePickerClose} />
+                                onClose={HandleTimePickerClose}
+                                onAccept={TimePickerChange}
+                                mobilePaper/>
                         </DemoContainer>
                     </LocalizationProvider>
                 </div>
