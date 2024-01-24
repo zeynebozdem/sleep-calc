@@ -20,7 +20,7 @@ function NavigationContainer(props) {
         hour12: true
     }));
 
-    message = <span>Uyanma saati seç</span>
+    message = <span>Uyuma saati seç</span>
 
     useEffect(() => {
         if (mode == 'interval') {
